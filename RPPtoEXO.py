@@ -48,7 +48,8 @@ MyDict = {
     "fps":   60,
     "RPPPath":   "test.rpp",
     "EXOPath":   "test.exo",
-    "SrcPath":   "",  # ファイルパス。絶対パスが必要。
+    "SrcPath":   "C:\\",  # ファイルパス。絶対パスが必要。
+    "EffPath":   "C:\\", #効果をファイルで保存する時用
     "SrcPosition":   1,  # 再生位置
     "SrcRate":   100,  # 再生速度
     "IsAlpha":   0,  # アルファチャンネルを読み込む
@@ -592,8 +593,8 @@ def Run():
     MyDict["RPPPath"] = file1.get().replace('"', '') if file1.get()[0]=="\"" else file1.get()
     MyDict["EXOPath"] = file2.get().replace('"', '') if file2.get()[0]=="\"" else file2.get()
     MyDict["IsAddFilterAsMediaObj"] = v1.get()
-    MyDict["SrcPath"] = file4.get().replace('"', '') if file4.get()[0]=="\"" else file4.get()
-    MyDict["EffPath"] = file9.get().replace('"', '') if file9.get()[0]=="\"" else file9.get()
+    MyDict["SrcPath"] = "" if file4.get() == "" else file4.get().replace('"', '') if  file4.get()[0]=="\"" else file4.get()
+    MyDict["EffPath"] = "" if file9.get() == "" else file9.get().replace('"', '') if  file9.get()[0]=="\"" else file9.get()
     MyDict["IsAlpha"] = v4.get()
     MyDict["IsLoop"] = v5.get()
     MyDict["SrcPosition"] = file6.get()
